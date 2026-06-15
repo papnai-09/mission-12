@@ -2,9 +2,10 @@ import React from 'react';
 
 const ProductCard = ({ product, onProductClick }) => {
   return (
-    <div
+    <button
+      type="button"
       onClick={() => onProductClick(product.id)}
-      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2 border border-gray-100"
+      className="group w-full text-left bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2 border border-gray-100"
     >
       <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
         <img
@@ -32,16 +33,16 @@ const ProductCard = ({ product, onProductClick }) => {
               ${product.price.toFixed(2)}
             </div>
           </div>
-          <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-100 scale-75 shadow-lg hover:shadow-xl">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-100 scale-75 shadow-lg">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
             </svg>
-          </button>
+          </span>
         </div>
         <div className="mt-4 flex items-center gap-2">
-          <div className="flex text-yellow-400">
+          <div className="flex text-yellow-400" aria-label="5 star rating">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+              <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
               </svg>
             ))}
@@ -49,7 +50,7 @@ const ProductCard = ({ product, onProductClick }) => {
           <span className="text-sm text-gray-600 font-medium">(128)</span>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 

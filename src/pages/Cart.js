@@ -6,9 +6,8 @@ import CartItem from '../components/CartItem';
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const cartItems = useSelector(state => state.cart.items);
+  const cartItems = useSelector((state) => state.cart.items);
 
-  // Calculate totals using useMemo for performance
   const { totalPrice, totalItems } = useMemo(() => {
     return {
       totalPrice: cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0),
@@ -25,7 +24,9 @@ const Cart = () => {
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center py-24">
-            <div className="text-8xl mb-6 opacity-30">🛒</div>
+            <svg className="w-20 h-20 mx-auto mb-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-2 6h12m-10 0a1 1 0 102 0m6 0a1 1 0 102 0" />
+            </svg>
             <h1 className="text-5xl font-black text-gray-900 mb-4">Cart is Empty</h1>
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
               Your shopping cart is waiting for something special. Explore our premium collection now!
@@ -52,7 +53,7 @@ const Cart = () => {
         <div className="mb-16">
           <h1 className="text-5xl font-black text-gray-900 mb-2">Shopping Cart</h1>
           <p className="text-lg text-gray-600">
-            {totalItems} item{totalItems !== 1 ? 's' : ''} • ${totalPrice.toFixed(2)}
+            {totalItems} item{totalItems !== 1 ? 's' : ''} - ${totalPrice.toFixed(2)}
           </p>
         </div>
 
@@ -109,7 +110,6 @@ const Cart = () => {
                 </Link>
               </div>
 
-              {/* Clear Cart Button */}
               <button
                 onClick={handleClearCart}
                 className="w-full border-2 border-red-500 text-red-500 hover:bg-red-50 font-bold py-2 rounded-xl transition duration-300"

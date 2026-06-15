@@ -20,16 +20,15 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simple validation
+
     if (
       formData.name.trim() &&
       formData.email.trim() &&
       formData.subject.trim() &&
       formData.message.trim()
     ) {
-      console.log('Form Submitted:', formData);
       setSubmitted(true);
-      // Reset form after 3 seconds
+
       setTimeout(() => {
         setFormData({
           name: '',
