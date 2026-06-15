@@ -1,6 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const getButtonClassName = ({ variant, size, fullWidth }) =>
+  [
+    'ds-button',
+    `ds-button--${variant}`,
+    `ds-button--${size}`,
+    fullWidth && 'ds-button--full',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
 export const Button = ({
   children,
   variant = 'primary',
@@ -12,14 +22,7 @@ export const Button = ({
 }) => (
   <button
     type={type}
-    className={[
-      'ds-button',
-      `ds-button--${variant}`,
-      `ds-button--${size}`,
-      fullWidth ? 'ds-button--full' : '',
-    ]
-      .filter(Boolean)
-      .join(' ')}
+    className={getButtonClassName({ variant, size, fullWidth })}
     disabled={disabled}
     onClick={onClick}
   >

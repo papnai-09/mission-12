@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const getFieldId = (id, label) =>
+  id || label.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 export const InputField = ({
   label,
   helperText,
@@ -11,9 +14,12 @@ export const InputField = ({
   value,
   disabled = false,
 }) => {
-  const inputId = id || label.toLowerCase().replace(/\s+/g, '-');
+  const inputId = getFieldId(id, label);
   const descriptionId = `${inputId}-description`;
-  const message = error || helperText;
+  const supportMessage = error || helperText;
+  const messageClassName = error
+    ? 'ds-field__message ds-field__message--error'
+    : 'ds-field__message';
 
   return (
     <label className="ds-field" htmlFor={inputId}>
@@ -26,15 +32,12 @@ export const InputField = ({
         value={value}
         disabled={disabled}
         aria-invalid={Boolean(error)}
-        aria-describedby={message ? descriptionId : undefined}
+        aria-describedby={supportMessage ? descriptionId : undefined}
         readOnly
       />
-      {message && (
-        <span
-          id={descriptionId}
-          className={error ? 'ds-field__message ds-field__message--error' : 'ds-field__message'}
-        >
-          {message}
+      {supportMessage && (
+        <span id={descriptionId} className={messageClassName}>
+          {supportMessage}
         </span>
       )}
     </label>

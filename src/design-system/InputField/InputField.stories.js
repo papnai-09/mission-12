@@ -10,7 +10,7 @@ const meta = {
   args: {
     label: 'Email address',
     placeholder: 'customer@example.com',
-    helperText: 'Used for order updates and receipts.',
+    helperText: 'We will use this for order updates.',
     value: '',
     type: 'email',
     disabled: false,
@@ -29,7 +29,7 @@ export const Default = {};
 
 export const WithValue = {
   args: {
-    value: 'gaurav@example.com',
+    value: 'customer@example.com',
   },
 };
 
@@ -42,7 +42,7 @@ export const Error = {
 
 export const Disabled = {
   args: {
-    value: 'locked@example.com',
+    value: 'archived@example.com',
     disabled: true,
   },
 };

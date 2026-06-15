@@ -8,8 +8,8 @@ const meta = {
     layout: 'centered',
   },
   args: {
-    title: 'Foldsack Travel Backpack',
-    category: "Men's clothing",
+    title: 'Weekend Trail Backpack',
+    category: 'Outdoor gear',
     price: 109.95,
     image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
     rating: 4.8,

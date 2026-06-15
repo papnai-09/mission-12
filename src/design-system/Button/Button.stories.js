@@ -8,7 +8,7 @@ const meta = {
     layout: 'centered',
   },
   args: {
-    children: 'Add to cart',
+    children: 'Add to basket',
     variant: 'primary',
     size: 'md',
     disabled: false,

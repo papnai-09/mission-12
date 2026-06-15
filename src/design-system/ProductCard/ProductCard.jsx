@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '../Button/Button';
 
-const stockClassName = (stockStatus) =>
+const SOLD_OUT = 'Sold out';
+
+const getStockClassName = (stockStatus) =>
   `ds-stock ds-stock--${stockStatus.toLowerCase().replace(/\s+/g, '-')}`;
 
 export const ProductCard = ({
@@ -29,8 +31,8 @@ export const ProductCard = ({
         <span className="ds-product-card__rating">{rating.toFixed(1)} rating</span>
       </div>
       <div className="ds-product-card__footer">
-        <span className={stockClassName(stockStatus)}>{stockStatus}</span>
-        <Button size="sm" disabled={stockStatus === 'Sold out'} onClick={onAddToCart}>
+        <span className={getStockClassName(stockStatus)}>{stockStatus}</span>
+        <Button size="sm" disabled={stockStatus === SOLD_OUT} onClick={onAddToCart}>
           Add
         </Button>
       </div>
