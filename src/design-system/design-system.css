@@ -1,0 +1,235 @@
+.ds-preview-shell {
+  --ds-background: #f8fafc;
+  --ds-surface: #ffffff;
+  --ds-surface-muted: #f1f5f9;
+  --ds-text: #111827;
+  --ds-muted: #64748b;
+  --ds-border: #dbe4ef;
+  --ds-primary: #6d28d9;
+  --ds-primary-hover: #5b21b6;
+  --ds-primary-text: #ffffff;
+  --ds-secondary: #0f172a;
+  --ds-secondary-text: #ffffff;
+  --ds-danger: #dc2626;
+  --ds-warning: #b45309;
+  --ds-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  min-height: 100vh;
+  padding: 48px;
+  background: var(--ds-background);
+  color: var(--ds-text);
+}
+
+.ds-preview-shell[data-theme='dark'] {
+  --ds-background: #0f172a;
+  --ds-surface: #111827;
+  --ds-surface-muted: #1e293b;
+  --ds-text: #f8fafc;
+  --ds-muted: #cbd5e1;
+  --ds-border: #334155;
+  --ds-primary: #a78bfa;
+  --ds-primary-hover: #c4b5fd;
+  --ds-primary-text: #1e1b4b;
+  --ds-secondary: #38bdf8;
+  --ds-secondary-text: #082f49;
+  --ds-danger: #f87171;
+  --ds-warning: #facc15;
+  --ds-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+}
+
+.ds-button {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.ds-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.ds-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ds-button--primary {
+  background: var(--ds-primary);
+  color: var(--ds-primary-text);
+}
+
+.ds-button--primary:hover:not(:disabled) {
+  background: var(--ds-primary-hover);
+}
+
+.ds-button--secondary {
+  background: var(--ds-secondary);
+  color: var(--ds-secondary-text);
+}
+
+.ds-button--ghost {
+  background: transparent;
+  border-color: var(--ds-border);
+  color: var(--ds-text);
+}
+
+.ds-button--sm {
+  min-height: 36px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.ds-button--md {
+  min-height: 44px;
+  padding: 11px 18px;
+  font-size: 0.95rem;
+}
+
+.ds-button--lg {
+  min-height: 52px;
+  padding: 14px 24px;
+  font-size: 1rem;
+}
+
+.ds-button--full {
+  width: 100%;
+}
+
+.ds-field {
+  color: var(--ds-text);
+  display: grid;
+  gap: 8px;
+  width: min(380px, 100%);
+}
+
+.ds-field__label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.ds-field__input {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: 8px;
+  color: var(--ds-text);
+  min-height: 44px;
+  outline: none;
+  padding: 10px 12px;
+}
+
+.ds-field__input:focus {
+  border-color: var(--ds-primary);
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.18);
+}
+
+.ds-field__input:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.ds-field__message {
+  color: var(--ds-muted);
+  font-size: 0.82rem;
+}
+
+.ds-field__message--error {
+  color: var(--ds-danger);
+}
+
+.ds-product-card {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: 8px;
+  box-shadow: var(--ds-shadow);
+  color: var(--ds-text);
+  overflow: hidden;
+  width: min(100%, 340px);
+}
+
+.ds-product-card--featured {
+  border-color: var(--ds-primary);
+}
+
+.ds-product-card__media {
+  align-items: center;
+  aspect-ratio: 4 / 3;
+  background: var(--ds-surface-muted);
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.ds-product-card__media img {
+  height: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.ds-product-card__body {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.ds-product-card__category {
+  color: var(--ds-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.ds-product-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.ds-product-card__meta,
+.ds-product-card__footer {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.ds-product-card__price {
+  color: var(--ds-text);
+  font-size: 1.45rem;
+  font-weight: 900;
+}
+
+.ds-product-card__rating {
+  color: var(--ds-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.ds-stock {
+  background: var(--ds-surface-muted);
+  border-radius: 999px;
+  color: var(--ds-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 6px 9px;
+}
+
+.ds-stock--low-stock {
+  color: var(--ds-warning);
+}
+
+.ds-stock--sold-out {
+  color: var(--ds-danger);
+}
+
+@media (max-width: 640px) {
+  .ds-preview-shell {
+    padding: 24px;
+  }
+}
