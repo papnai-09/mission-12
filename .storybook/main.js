@@ -1,16 +1,14 @@
-
-
-/** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
-  "stories": [
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+  stories: [
+    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
-  "addons": [
-    "@storybook/preset-create-react-app",
-    "@storybook/addon-a11y",
-    "@storybook/addon-docs"
+  addons: [
+    '@storybook/preset-create-react-app',
+    '@storybook/addon-a11y',
+    '@storybook/addon-docs',
   ],
-  "framework": "@storybook/react-webpack5",
-  "staticDirs": ["../public"]
+  framework: '@storybook/react-webpack5',
+  staticDirs: ['../public'],
 };
+
 module.exports = config;

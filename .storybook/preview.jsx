@@ -1,7 +1,6 @@
 import '../src/index.css';
 import '../src/design-system/design-system.css';
 
-/** @type { import('@storybook/react-webpack5').Preview } */
 const preview = {
   globalTypes: {
     theme: {
